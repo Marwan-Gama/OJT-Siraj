@@ -5,7 +5,8 @@ class Character:
         self.name = name
         self.character_class = character_class
         self.health = 100
-        self.inventory = []
+        self.score = 0
+
 
 class Location:
     def __init__(self, name, description, challenges):
@@ -21,7 +22,6 @@ class Game:
             Location("Castle", "An ancient castle with hidden treasures.", ["Dragon", "Ghost"]),
             Location("Cave", "A dark cave filled with valuable minerals.", ["Bat", "Spider"])
         ]
-        self.score = 0
 
     def create_character(self):
         name = input("Enter your character's name: ")
@@ -47,13 +47,20 @@ class Game:
             print("Invalid choice. The creature attacks you!")
 
     def attack_creature(self, creature):
-        damage = random.randint(10, 20)
+        damage = random.randint(1, 20)
         print(f"You attack the {creature} and deal {damage} damage.")
         print(f"The {creature} retaliates with a counter-attack.")
-        self.character.health -= random.randint(5, 15)
+        self.character.health -= damage
+        self.character.score += 20 - damage
+
 
     def display_score(self):
-        print(f"Score: {self.score}")
+        print(f"Score: {self.character.score}")
+        if self.character.score > 50:
+            print("You Win!")
+        else:
+            print("You Lose!")
+
 
     def play(self):
         self.create_character()
