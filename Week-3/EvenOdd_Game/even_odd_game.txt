@@ -1,0 +1,47 @@
+EvenOdd Game
+-------------------------------
+Create a console program called EvenOdd Game
+
+Phase 1:
+-----------------------------------
+2 players play against each other.
+You get the player's names from the user.
+In each round, the game randomize a number between -5 and 13.
+If the number is even, the first player gets a point.
+If the number is odd, the second player gets a point.
+Rounds are played until someone is the first to get 3 points (Best of 5), and when so - she's the winner.
+
+For example:
+Round #1, random number is 8, Julia scored!
+Status: Julia 1, Avihu 0
+Round #2, random number is 10, Julia scored!
+Status: Julia 2, Avihu 0
+Round #3, random number is 5, Avihu scored!
+Status: Julia 2, Avihu 1
+Round #4, random number is 12, Julia scored!
+Status: Julia 3, Avihu 1
+Julia Wins!
+
+
+Phase 2:
+-----------------------------------
+Enhance the EvenOdd game:
+Now enable to conduct a tournament.
+You can get players from the user (no less than 2).
+Now, in each round the game picks up 2 players randomly to play, so one of them will get a point.
+The game is playing rounds (each round with 2 randomized players!) until someone reaches 3 wins:
+If, for example, it's best of 5 - the first to get to 3 points.
+If, for example, it's best of 7 - the first to get to 4 points.
+
+phase 3:
+-----------------------------------
+The winner of the tournament should play against the Boss.
+The Boss has special ability: if the number is negative even, the player doesn't get the point, and the round is replayed again.
+
+----------------------------------------------------------------------
+
+Notes:
+- Player has at least name and score.
+- Best of 5 can be dynamic (Can be set to 3/5/7/9..., so the number of points to win vary)
+- Model your project! Split into functions and modules.
+- Clean Coding!
