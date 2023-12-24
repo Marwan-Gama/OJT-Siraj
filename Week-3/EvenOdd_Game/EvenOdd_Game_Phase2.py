@@ -7,7 +7,7 @@ class Player:
 
 def play_round(player1, player2):
     number = random.randint(-5, 13)
-
+    print(f"Random Number is {number}.")
     if number % 2 == 0:
         player1.score += 1
         print(f"Round: {player1.name} scored!")

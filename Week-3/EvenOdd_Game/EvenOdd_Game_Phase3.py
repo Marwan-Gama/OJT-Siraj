@@ -7,6 +7,7 @@ class Player:
 
 def play_round(player1, player2):
     number = random.randint(-5, 13)
+    print(f"Random Number is {number}.")
     if number % 2 == 0 and number >= 0:
         player1.score += 1
         print(f"Round: {player1.name} scored!")
@@ -53,12 +54,13 @@ def play_game():
     boss = Player("Boss")
     print("\n=== Final Round: Winner vs. Boss ===")
     print(f"{winner.name} vs. {boss.name}")
+    winner.score = 0
     while winner.score <= rounds_to_win and boss.score <= rounds_to_win:
         winner, boss = play_round(winner, boss)
         if winner.score == rounds_to_win:
             print(f"{winner.name} Wins the final round and is the ultimate champion!")
             break
-        else:
+        elif boss.score == rounds_to_win :
             print("The Boss Wins the final round. Better luck next time!")
             break
 
