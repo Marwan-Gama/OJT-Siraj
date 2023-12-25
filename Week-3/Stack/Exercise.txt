@@ -1,0 +1,34 @@
+Create stack.py module.
+Expose only stack APIs (LIFO):
+- push - adds item on top of stack,
+- pop  - removes item from top of stack,
+- top  - gets top item without removal,
+- is_empty - boolean whether stack is empty.
+
+in main.py create a function which gets a stack with a series of alphabetic characters, with @ inside.
+Your mission is to shrink the stack so between each @ the maximum chars are left.
+
+Example for such a stack:
+ t
+ a
+ x
+ @
+ m
+ @
+ g
+ r
+ b
+
+|  |
+----
+\  /
+ \/
+
+ x
+ @
+ m
+ @
+ r
+
+*Note: In this ex you can use only your stacks, and only the noted APIs!
+*Note: If I send you my_stack, then I shall see your changes in my_stack after your function.
