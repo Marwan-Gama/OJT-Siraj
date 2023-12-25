@@ -6,7 +6,7 @@ def shrink_stack(my_stack):
 
     while not stack.is_empty(my_stack):
         item = stack.pop(my_stack)
-        if item == "@"  :
+        if item == "@" or len(my_stack) == 0 :
             max_char = 0
             while count > 0:
                 temp = ord(stack.pop(temp_stack))
@@ -15,7 +15,9 @@ def shrink_stack(my_stack):
                 count -= 1
             count = 0
             stack.push(temp_stack, chr(max_char))
-            stack.push(temp_stack, item)
+            if item == "@":
+                stack.push(temp_stack, item)
+
         else:
             stack.push(temp_stack, item)
             count += 1
