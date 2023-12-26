@@ -8,3 +8,5 @@ primes less than or equal to n, Pn, with the set, An, of integers satisfying 2i 
 • Hint: Use the Sieve of Eratosthenes (Sieve of Eratosthenes -Wikipedia) method to find all primes less than or equal
 to n.
 '''
+
+
