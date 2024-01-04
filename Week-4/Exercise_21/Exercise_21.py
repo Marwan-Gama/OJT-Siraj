@@ -18,8 +18,8 @@ with open('country_population.txt', 'r') as file:
     most_populated_country = ''
     most_crowded_country = ''
     least_crowded_country = ''
-    oldest_date = ''
-    newest_date = ''
+    oldest_date = 0
+    newest_date = 0
     continent_count = {}
 
     for line in lines:
@@ -27,7 +27,7 @@ with open('country_population.txt', 'r') as file:
 
         country = data[0]
         population = int(data[1])
-        established_date = data[4]
+        established_date = data[4].split('-')
         continent = data[5]
 
         # Finding the most populated country
@@ -42,11 +42,11 @@ with open('country_population.txt', 'r') as file:
             least_crowded_country = country
 
         # Finding the oldest and newest countries
-        if oldest_date == '' or established_date < oldest_date:
-            oldest_date = established_date
+        if oldest_date == 0 or int(established_date[0]) < int(oldest_date):
+            oldest_date = int(established_date[0])
             oldest_country = country
-        if newest_date == '' or established_date > newest_date:
-            newest_date = established_date
+        if newest_date == 0 or int(established_date[0]) > int(newest_date):
+            newest_date = int(established_date[0])
             newest_country = country
 
         # Counting countries for each continent
