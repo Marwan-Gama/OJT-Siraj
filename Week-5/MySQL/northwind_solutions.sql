@@ -316,7 +316,7 @@ GROUP BY
 -- Q30 --
 SELECT 
     c.CategoryName,
-    SUM(p.QuantityPerUnit) AS total_ordered_units,
+    SUM(p.UnitsOnOrder) AS total_ordered_units,
     SUM(p.UnitsInStock) AS total_units_in_stock
 FROM 
     products p
@@ -324,8 +324,30 @@ JOIN
     categories c ON p.CategoryID = c.CategoryID
 WHERE 
     c.CategoryName LIKE '%c%' 
-    AND p.QuantityPerUnit > 95
+    AND p.UnitsOnOrder > 95
 GROUP BY 
     c.CategoryName
 ORDER BY 
     c.CategoryName;
+    
+    
+    
+    
+-- test -- 
+CREATE TABLE test1(
+	Test1 int PRIMARY KEY, 
+    Test2 varchar(255)
+    )
+;
+CREATE TABLE test2(
+	Test1 int , 
+    Test2 varchar(255) PRIMARY KEY,
+    FOREIGN KEY (Test1) REFERENCES test1(Test1)
+    )
+;
+
+INSERT INTO test1(Test1,Test2) values (25,'25');
+INSERT INTO test2(Test1,Test2) values (25,'25');
+
+DROP TABLE test1;
+DROP TABLE test2;
