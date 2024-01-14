@@ -331,23 +331,27 @@ ORDER BY
     c.CategoryName;
     
     
-    
-    
--- test -- 
-CREATE TABLE test1(
-	Test1 int PRIMARY KEY, 
-    Test2 varchar(255)
-    )
-;
-CREATE TABLE test2(
-	Test1 int , 
-    Test2 varchar(255) PRIMARY KEY,
-    FOREIGN KEY (Test1) REFERENCES test1(Test1)
-    )
-;
+-- Q31 --
+SELECT
+    e.LastName AS EmployeeLastName,
+    COUNT(o.OrderID) AS TotalOrders,
+    MAX(o.OrderDate) AS LastOrderDate
+FROM
+    employees e
+JOIN
+    orders o ON e.EmployeeID = o.EmployeeID
+GROUP BY
+    e.EmployeeID
+HAVING
+    COUNT(o.OrderID) > 92;
 
-INSERT INTO test1(Test1,Test2) values (25,'25');
-INSERT INTO test2(Test1,Test2) values (25,'25');
 
-DROP TABLE test1;
-DROP TABLE test2;
+-- Q32 --
+-- Q33 --
+-- Q34 --
+-- Q35 --
+-- Q36 --
+-- Q37 --
+-- Q38 --
+
+    
